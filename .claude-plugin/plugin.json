@@ -1,0 +1,14 @@
+{
+  "name": "homey",
+  "version": "1.0.0",
+  "description": "Create, update, and manage Homey Pro flows via the local REST API.",
+  "author": {
+    "name": "psjostrom"
+  },
+  "keywords": [
+    "homey",
+    "smart-home",
+    "flows",
+    "automation"
+  ]
+}

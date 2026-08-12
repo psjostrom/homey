@@ -11,7 +11,8 @@ Create and manage flows on Homey Pro via the local REST API.
 
 - **Base URL:** `http://{HOMEY_IP}/api` (default: `192.168.1.4`)
 - **Auth:** `Authorization: Bearer {TOKEN}` — Personal Access Token from my.homey.app
-- **All endpoints require trailing slash** (e.g., `/api/manager/flow/flow/`)
+- **Collection and card endpoints require trailing slash** (e.g., `/api/manager/flow/flow/`)
+- **Flow ID PUT/DELETE endpoints omit trailing slash** (e.g., `/api/manager/flow/flow/{id}`)
 - **Token env var:** `HOMEY_TOKEN`
 
 ## Discovery — Always Do First
@@ -174,7 +175,7 @@ POST /api/manager/flow/advancedflow/
 
 | Mistake | Symptom | Fix |
 |---------|---------|-----|
-| Missing trailing slash on URL | 404 | Add `/` |
+| Missing trailing slash on collection/card URL | 404 | Add `/`; flow ID PUT/DELETE URLs intentionally omit it |
 | Missing `group` on conditions | UI crash: `push` of undefined | Add `"group": "group1"` |
 | Colon in droptoken | "Unavailable" in UI | Use pipe `\|` |
 | Body nested under `{ flow: {} }` | "Missing Parameter: flow.name" | Put fields at top level |

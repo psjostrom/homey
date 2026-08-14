@@ -5,6 +5,8 @@
   "author": {
     "name": "psjostrom"
   },
+  "repository": "https://github.com/psjostrom/homey",
+  "license": "MIT",
   "keywords": [
     "homey",
     "smart-home",

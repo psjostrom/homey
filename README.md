@@ -1,11 +1,31 @@
 # Homey
 
 `homey` is a Claude Code command for creating, updating, and managing Homey Pro
-flows through Homey's local REST API. It is the repository's only
-command-only plugin: it has no Codex, Cursor, opencode, or `SKILL.md` surface.
+flows through Homey's local REST API. It is command-only: no Codex, Cursor,
+opencode, or `SKILL.md` surface.
 
 The command contract is
 [`commands/homey-flows.md`](commands/homey-flows.md).
+
+## Install
+
+### Claude Code
+
+Install through the Agent Plugins catalog:
+
+```sh
+claude plugin marketplace add psjostrom/agent-plugins
+claude plugin install homey@agent-plugins
+```
+
+## Supported harnesses
+
+| Harness | Support |
+| --- | --- |
+| Claude Code | `/homey:homey-flows` command |
+| Codex | Not supported |
+| Cursor | Not supported |
+| opencode | Not supported |
 
 ## Invoke it
 
@@ -21,8 +41,6 @@ Describe the requested automation after the command, for example:
 /homey:homey-flows Create a flow that turns on the hallway lights when the
 door sensor opens, only between sunset and 23:00.
 ```
-
-Homey is not available through Codex, Cursor, or opencode in this repository.
 
 ## Safety first
 
@@ -280,13 +298,21 @@ UUID and branch output before posting.
 | Stale device/card discovery | Request fails or targets wrong device | Discover again immediately before writing |
 | Wrong Homey or token | Connection/authentication failure | Check local IP, `HOMEY_TOKEN`, and Homey availability without printing the token |
 
+## Develop
+
+Homey is a standalone repository at <https://github.com/psjostrom/homey>.
+Claude Code installs through the Agent Plugins catalog.
+
 ## Source map
 
 - [`commands/homey-flows.md`](commands/homey-flows.md) — command metadata,
   connection defaults, API contracts, payload examples, and pitfalls.
-- [`../../README.md`](../../README.md) — installation and harness coverage.
 - `.claude-plugin/plugin.json` — Claude Code plugin metadata.
 
 There is no Homey-specific automated validator. Validate changes with a
 read-only markdown review, JSON parsing for manifest edits, and an authorized
 manual smoke test against a non-production or explicitly selected Homey.
+
+## License
+
+Licensed under [MIT](LICENSE).

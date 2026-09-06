@@ -1,11 +1,7 @@
 # Homey
 
-`homey` is a Claude Code command for creating, updating, and managing Homey Pro
-flows through Homey's local REST API. It is command-only: no Codex, Cursor,
-opencode, or `SKILL.md` surface.
-
-The command contract is
-[`commands/homey-flows.md`](commands/homey-flows.md).
+Homey lets Claude Code create, update, and manage Homey Pro flows through the
+hub's local REST API. It is a command plugin, not a cross-harness Agent Skill.
 
 ## Install
 
@@ -26,6 +22,7 @@ claude plugin install homey@agent-plugins
 | Codex | Not supported |
 | Cursor | Not supported |
 | opencode | Not supported |
+| Antigravity | Not supported |
 
 ## Invoke it
 
